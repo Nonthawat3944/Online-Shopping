@@ -1,0 +1,141 @@
+* {
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E1DDDB;
+}
+
+main {
+    margin-top: 130px;
+}
+
+footer {
+    background-color: #0b2d38;
+    color: #ffffff;
+}
+
+.navbar {
+    background-color: #EF6C33;
+    font-size: small;
+}
+
+.nav-hover:hover {
+    opacity: 0.5;
+}
+
+.navbar-main,
+.navbar-app {
+    background-color: #0b2d38;
+}
+
+.navbar-bottom {
+    position: fixed;
+    bottom: 0;
+    z-index: 10000;
+    width: 100%;
+    background-color: #0b2d38;
+}
+
+.category-list-item {
+    height: 278px;
+    overflow-y: auto;
+}
+
+.category-list-item::-webkit-scrollbar {
+    width: 0;
+}
+
+.product-item:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
+}
+
+.product-btn {
+    text-decoration: none;
+    position: absolute;
+}
+
+
+/* authentication display */
+
+.auth-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-box {
+    width: 650px;
+    border-radius: 20px;
+}
+
+.auth-title h3 b {
+    color: #0b2d38;
+}
+
+.auth-title strong {
+    color: #EF6C33;
+}
+
+
+/* cart display  */
+
+.cart-list::-webkit-scrollbar {
+    width: 0;
+}
+
+.cart-item-image {
+    margin-right: 1rem;
+}
+
+.cart-item-image img {
+    width: 100px;
+}
+
+
+/* Remove Ccategoroy -list when display < 765px */
+
+@media screen and (max-width: 764px) {
+    .category-list {
+        display: none;
+    }
+}
+
+
+/* Responsive for Mobile */
+
+@media screen and (max-width: 400px) {
+    main {
+        margin-top: 85px;
+    }
+    footer {
+        padding-bottom: 5vh;
+    }
+    .navbar-main,
+    .product-display,
+    .cart-list {
+        display: none;
+    }
+}
+
+
+/* Responsive for Website */
+
+@media screen and (min-width: 401px) {
+    .navbar-app,
+    .product-display-app,
+    .navbar-bottom,
+    .cart-list-app {
+        display: none;
+    }
+    .cart-list {
+        height: 380px;
+        overflow-y: auto;
+    }
+    .cart-item-details .cart-item-title ul li:first-child strong a:hover {
+        opacity: 0.5;
+    }
+}
