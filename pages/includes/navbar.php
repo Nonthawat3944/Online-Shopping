@@ -15,7 +15,7 @@
                     <li class="nav-item d-flex">
                         <div class="dropdown me-2">
                             <a class="nav-link nav-hover dropdown-toggle text-white" href="#" id="user_data" data-bs-toggle="dropdown" aria-expanded="false">
-                                Username
+                                <?= $_SESSION['U_USERNAME'] ?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="user_data">
                                 <?= $_SESSION['U_ROLE'] === true ? '<li><a class="dropdown-item" href="../../admin/">จัดการร้านค้า</a></li>' : '' ?>
@@ -147,3 +147,20 @@ if (removeNavMain('auth') == false) {
 <?php
 }
 ?>
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

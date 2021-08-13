@@ -11,7 +11,7 @@
             </div>
             <hr>
             <div class="auth-body">
-                <form action="">
+                <form action="../../services/auth/register.php" method="POST">
                     <div class="input-group mb-3">
                         <label for="username" class="input-group-text">ชื่อผู้ใช้</label>
                         <input type="text" name="username" class="form-control" placeholder="ชื่อผู้ใช้..." required>
@@ -27,14 +27,14 @@
                     </div>
                     <div class="input-group mb-3">
                         <label for="password" class="input-group-text">รหัสผ่าน</label>
-                        <input type="password" name="password" class="form-control" placeholder="รหัสผ่าน..." required>
+                        <input type="password" name="password" class="form-control" minlength="8" placeholder="รหัสผ่าน..." required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="password" class="input-group-text">ยืนยันรหัสผ่าน</label>
-                        <input type="password" name="confirm_password" class="form-control" placeholder="ยืนยันรหัสผ่าน..." required>
+                        <input type="password" name="confirm_password" class="form-control" minlength="8" placeholder="ยืนยันรหัสผ่าน..." required>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="submit" value="ลงทะเบียน" class="btn btn-primary w-100">
+                        <input type="submit" name="register" value="ลงทะเบียน" class="btn btn-primary w-100">
                     </div>
                 </form>
                 <span>ลงทะเบียนแล้ว ? <a href="login.php">เข้าสู่ระบบ ตอนนี้</a></span>
