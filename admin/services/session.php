@@ -4,7 +4,7 @@ if (isset($_SESSION['U_ROLE'])) {
 ?>
         <script>
             alert('คุณไม่มีสิทธิในการเข้าถึง')
-            window.location = '../../'
+            window.location = '../../../'
         </script>
     <?php
     }
