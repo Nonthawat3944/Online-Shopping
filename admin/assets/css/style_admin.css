@@ -1,25 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
-body,
-button {
-  font-family: "Inter", sans-serif;
+* {
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 :root {
   --offcanvas-width: 270px;
   --topNavbarHeight: 56px;
 }
+
 .sidebar-nav {
   width: var(--offcanvas-width);
 }
+
 .sidebar-link {
   display: flex;
   align-items: center;
 }
+
 .sidebar-link .right-icon {
   display: inline-flex;
 }
+
 .sidebar-link[aria-expanded="true"] .right-icon {
   transform: rotate(180deg);
 }
+
 @media (min-width: 992px) {
   body {
     overflow: auto !important;
