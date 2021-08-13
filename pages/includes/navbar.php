@@ -3,32 +3,43 @@
         <div class="container-xxl">
             <ul class="navbar-nav me-auto mb-lg-0">
                 <li class="nav-item d-flex">
-                    <a class="text-white nav-link nav-hover active me-2" aria-current="page" href="#">หน้าแรก</a>
+                    <a class="text-white nav-link nav-hover active me-2" aria-current="page" href="../../">หน้าแรก</a>
                     <a class="text-white nav-link nav-hover" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">ติดต่อเรา</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav mb-lg-0 justify-content-end">
-                <li class="nav-item d-flex">
-                    <div class="dropdown me-2">
-                        <a class="nav-link nav-hover dropdown-toggle text-white" href="#" id="user_data" data-bs-toggle="dropdown" aria-expanded="false">
-                            Username
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="user_data">
-                            <!-- <?= $_SESSION['U_ROLE'] === true ? '<li><a class="dropdown-item" href="../../admin/">จัดการร้านค้า</a></li>' : '' ?> -->
-                            <li><a class="dropdown-item" href="?account">บัญชีผู้ใช้</a></li>
-                            <li><a class="dropdown-item" href="?account=order">การซื้อของฉัน</a></li>
-                            <li><a class="dropdown-item" href="?cart">ตะกร้าสินค้า</a></li>
-                            <li><a class="dropdown-item" href="?account=wishlist">สินค้าที่ถูกใจ</a></li>
-                            <li><a class="dropdown-item text-danger" href="?logout" onclick="return confirm('ต้องการออกจากระบบ ?')">ออกจากระบบ</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item d-flex">
-                    <a class="nav-link nav-hover me-2 text-white" href="../../pages/auth/register.php">ลงทะเบียน</a>
-                    <span class="nav-link me-2 text-white">|</span>
-                    <a class="nav-link nav-hover text-white" href="../../pages/auth/login.php">เข้าสู่ระบบ</a>
-                </li>
+                <?php
+                if (isset($_SESSION['U_ID'])) {
+                ?>
+                    <li class="nav-item d-flex">
+                        <div class="dropdown me-2">
+                            <a class="nav-link nav-hover dropdown-toggle text-white" href="#" id="user_data" data-bs-toggle="dropdown" aria-expanded="false">
+                                Username
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="user_data">
+                                <?= $_SESSION['U_ROLE'] === true ? '<li><a class="dropdown-item" href="../../admin/">จัดการร้านค้า</a></li>' : '' ?>
+                                <li><a class="dropdown-item" href="?account">บัญชีผู้ใช้</a></li>
+                                <li><a class="dropdown-item" href="?account=order">การซื้อของฉัน</a></li>
+                                <li><a class="dropdown-item" href="?cart">ตะกร้าสินค้า</a></li>
+                                <li><a class="dropdown-item" href="?account=wishlist">สินค้าที่ถูกใจ</a></li>
+                                <li><a class="dropdown-item text-danger" href="?logout" onclick="return confirm('ต้องการออกจากระบบ ?')">ออกจากระบบ</a></li>
+                            </ul>
+                        </div>
+                        <span class="nav-link me-2 text-white">|</span>
+                        <a class="nav-link nav-hover text-white"href="?logout" onclick="return confirm('ต้องการออกจากระบบ ?')">ออกจากระบบ</a>
+                    </li>
+                <?php
+                } else {
+                ?>
+                    <li class="nav-item d-flex">
+                        <a class="nav-link nav-hover me-2 text-white" href="../../pages/auth/register.php">ลงทะเบียน</a>
+                        <span class="nav-link me-2 text-white">|</span>
+                        <a class="nav-link nav-hover text-white" href="../../pages/auth/login.php">เข้าสู่ระบบ</a>
+                    </li>
+                <?php
+                }
+                ?>
             </ul>
         </div>
     </nav>

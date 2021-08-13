@@ -1,3 +1,14 @@
+<?php
+require_once('./services/connect.php');
+require_once('./services/session.php');
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    ?>
+    <meta http-equiv="refresh" content="0; url=../">
+    <?php
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,5 +19,6 @@
 </head>
 <body>
     <H1>Welcome to Admin Portal.</H1>
+    <a href="?logout">Logout</a>
 </body>
 </html>

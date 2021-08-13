@@ -1,5 +1,6 @@
 <!-- Header -->
 <?php include_once('../includes/header.php') ?>
+<?php include_once('../../services/auth/login.php') ?>
 <!-- Navbar  -->
 <?php include_once('../includes/navbar.php') ?>
 <main class="auth-main">
@@ -11,7 +12,7 @@
             </div>
             <hr>
             <div class="auth-body">
-                <form action="">
+                <form action="../../services/auth/login.php" method="POST">
                     <div class="input-group mb-3">
                         <label for="username" class="input-group-text">ชื่อผู้ใช้</label>
                         <input type="text" name="username" class="form-control" placeholder="ชื่อผู้ใช้..." required>
@@ -21,7 +22,7 @@
                         <input type="password" name="password" class="form-control" placeholder="รหัสผ่าน..." required>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="submit" value="เข้าสู่ระบบ" class="btn btn-primary w-100">
+                        <input type="submit" name="login" value="เข้าสู่ระบบ" class="btn btn-primary w-100">
                     </div>
                 </form>
                 <span>ยังไม่ได้ลงทะเบียน ? <a href="register.php">ลงทะเบียน ตอนนี้</a></span>

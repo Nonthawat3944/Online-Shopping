@@ -1,3 +1,12 @@
+<?php 
+require_once('../../admin/services/connect.php');
+if(isset($_GET['logout'])) {
+    session_destroy();
+    ?>
+    <meta http-equiv="refresh" content="0; url=../../">
+    <?php
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
