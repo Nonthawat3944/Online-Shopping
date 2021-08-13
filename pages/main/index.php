@@ -4,15 +4,16 @@
 <?php include_once('../includes/navbar.php') ?>
 <main class="container-xxl py-3">
     <?php
-    if($_GET['a']){
-        ?>
-        <meta http-equiv="refresh" content="0; url=../cart/">
-        <?php
-    } else
-    if ($_GET['pd']) {
+    if (isset($_GET['cart'])) {
+        include_once('../cart/index.php');
+    } elseif (isset($_GET['submit'])) {
+        include_once('../cart/form_order.php');
+    } elseif (isset($_GET['pd'])) {
         include_once('../products/product_details.php');
-    } elseif ($_GET['search']) {
+    } elseif (isset($_GET['search'])) {
         include_once('../products/product_search.php');
+    } elseif (isset($_GET['account'])) {
+        include_once('../account/index.php');
     } else {
     ?>
         <div class="row mb-4">

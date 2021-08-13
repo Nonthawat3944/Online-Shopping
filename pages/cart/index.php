@@ -113,7 +113,7 @@
                                         <td class="text-end">฿80,000.00</td>
                                     </tr>
                                 </table>
-                                <a href="" class="btn btn-success">สั่งซื้อสินค้า</a>
+                                <a href="?submit" class="btn btn-success">สั่งซื้อสินค้า</a>
                             </div>
                         </div>
                     </div>

@@ -10,6 +10,21 @@
 
             <ul class="navbar-nav mb-lg-0 justify-content-end">
                 <li class="nav-item d-flex">
+                    <div class="dropdown me-2">
+                        <a class="nav-link nav-hover dropdown-toggle text-white" href="#" id="user_data" data-bs-toggle="dropdown" aria-expanded="false">
+                            Username
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="user_data">
+                            <!-- <?= $_SESSION['U_ROLE'] === true ? '<li><a class="dropdown-item" href="../../admin/">จัดการร้านค้า</a></li>' : '' ?> -->
+                            <li><a class="dropdown-item" href="?account">บัญชีผู้ใช้</a></li>
+                            <li><a class="dropdown-item" href="?account=order">การซื้อของฉัน</a></li>
+                            <li><a class="dropdown-item" href="?cart">ตะกร้าสินค้า</a></li>
+                            <li><a class="dropdown-item" href="?account=wishlist">สินค้าที่ถูกใจ</a></li>
+                            <li><a class="dropdown-item text-danger" href="?logout" onclick="return confirm('ต้องการออกจากระบบ ?')">ออกจากระบบ</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item d-flex">
                     <a class="nav-link nav-hover me-2 text-white" href="../../pages/auth/register.php">ลงทะเบียน</a>
                     <span class="nav-link me-2 text-white">|</span>
                     <a class="nav-link nav-hover text-white" href="../../pages/auth/login.php">เข้าสู่ระบบ</a>
@@ -81,7 +96,7 @@
                                 <li class="dropdown-item">Category</li>
                             </ul>
                         </div>
-                        <a href="#" class="btn btn-danger me-2"><i class="bi bi-heart-fill me-2"></i>ถูกใจ</a>
+                        <a href="?account=wishlist" class="btn btn-danger me-2"><i class="bi bi-heart-fill me-2"></i>ถูกใจ</a>
                         <a href="?cart" class="btn btn-warning"><i class="bi bi-basket2-fill me-2"></i>ตะกร้า</a>
                     </div>
                 </div>
@@ -97,7 +112,7 @@ if (removeNavMain('auth') == false) {
     <!-- Responsive Navbar Bottom for mobile  -->
     <section class="navbar-bottom shadow p-2">
         <div class="d-flex justify-content-center">
-            <a href="" class="btn btn-sm btn-danger me-2"><i class="bi bi-heart-fill me-2"></i>ถูกใจ</a>
+            <a href="?account=wishlist" class="btn btn-sm btn-danger me-2"><i class="bi bi-heart-fill me-2"></i>ถูกใจ</a>
             <a href="?cart" class="btn btn-sm btn-warning me-2"><i class="bi bi-basket2-fill me-2"></i>ตะกร้า</a>
             <div class="dropup">
                 <button class="btn btn-sm btn-info dropdown-toggle shadow" type="button" id="dropupCategory" data-bs-toggle="dropdown" aria-expanded="false">
