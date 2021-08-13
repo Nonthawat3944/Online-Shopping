@@ -17,29 +17,37 @@ if (isset($_GET['logout'])) {
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h4>Dashboard</h4>
+                <h4>หน้าหลัก</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 mb-3">
                 <div class="card bg-primary text-white h-100">
-                    <div class="card-body py-5">Primary Card</div>
-                    <div class="card-footer d-flex">
-                        View Details
-                        <span class="ms-auto">
-                            <i class="bi bi-chevron-right"></i>
-                        </span>
+                    <div class="card-body py-5">
+                        <h1><strong>รายการสั่งซื้อ</strong></h1>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="d-flex text-decoration-none text-white">
+                            คลิกจัดการระบบ
+                            <span class="ms-auto">
+                                <i class="bi bi-chevron-right"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card bg-warning text-dark h-100">
-                    <div class="card-body py-5">Warning Card</div>
-                    <div class="card-footer d-flex">
-                        View Details
-                        <span class="ms-auto">
-                            <i class="bi bi-chevron-right"></i>
-                        </span>
+                    <div class="card-body py-5">
+                        <h1><strong>รายชื่อสมาชิก</strong></h1>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="d-flex text-decoration-none text-dark">
+                            คลิกจัดการระบบ
+                            <span class="ms-auto">
+                                <i class="bi bi-chevron-right"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
