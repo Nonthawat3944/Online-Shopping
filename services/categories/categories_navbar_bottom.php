@@ -10,7 +10,7 @@ try {
 
 foreach ($categories as $c) {
 ?>
-    <li><a href="?c=<?= $c['id'] ?>&category=<?= $c['category'] ?>" class="dropdown-item"><?= $c['category'] ?></a></li>
+    <a href="?c=<?= $c['id'] ?>&category=<?= $c['category'] ?>" class="list-group-item list-group-item-action"><?= $c['category'] ?></a>
 <?php
 }
 ?>

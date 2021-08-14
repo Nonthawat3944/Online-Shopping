@@ -80,31 +80,22 @@
         <section class="shadow navbar-main">
             <div class="container-xxl py-3">
                 <div class="row">
-                    <div class="mb-2 col-lg-3 text-lg-start text-center">
+                    <div class="col-lg-3 text-lg-start text-center">
                         <h3><a class="text-decoration-none text-white" href="../../">CSEMN</a></h3>
                     </div>
-                    <div class="mb-2 col-lg-5">
+                    <div class="col-lg-5">
                         <form method="GET" class="d-flex w-100">
                             <input class="form-control me-2" name="search" type="search" placeholder="ค้นหาสินค้า" aria-label="Search">
                             <button class="btn btn-success" type="submit">ค้นหา</button>
                         </form>
                     </div>
-                    <div class="mb-2 col-lg-4 text-lg-end text-center">
+                    <div class="col-lg-4 text-lg-end text-center">
                         <div class="dropdown me-2 d-inline">
                             <a class="btn btn-info dropdown-toggle" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 ประเภทสินค้า
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li class="dropdown-item">Category</li>
-                                <li class="dropdown-item">Category</li>
-                                <li class="dropdown-item">Category</li>
-                                <li class="dropdown-item">Category</li>
-                                <li class="dropdown-item">Category</li>
-                                <li class="dropdown-item">Category</li>
-                                <li class="dropdown-item">Category</li>
-                                <li class="dropdown-item">Category</li>
-                                <li class="dropdown-item">Category</li>
-                                <li class="dropdown-item">Category</li>
+                                <?php require_once('../../services/categories/categories_navbar.php') ?>
                             </ul>
                         </div>
                         <a href="?account=wishlist" class="btn btn-danger me-2"><i class="bi bi-heart-fill me-2"></i>ถูกใจ</a>
@@ -125,28 +116,28 @@ if (removeNavMain('auth') == false) {
         <div class="d-flex justify-content-center">
             <a href="?account=wishlist" class="btn btn-sm btn-danger me-2"><i class="bi bi-heart-fill me-2"></i>ถูกใจ</a>
             <a href="?cart" class="btn btn-sm btn-warning me-2"><i class="bi bi-basket2-fill me-2"></i>ตะกร้า</a>
-            <div class="dropup">
-                <button class="btn btn-sm btn-info dropdown-toggle shadow" type="button" id="dropupCategory" data-bs-toggle="dropdown" aria-expanded="false">
-                    ประเภทสินค้า
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropupCategory">
-                    <li class="dropdown-item">Category</li>
-                    <li class="dropdown-item">Category</li>
-                    <li class="dropdown-item">Category</li>
-                    <li class="dropdown-item">Category</li>
-                    <li class="dropdown-item">Category</li>
-                    <li class="dropdown-item">Category</li>
-                    <li class="dropdown-item">Category</li>
-                    <li class="dropdown-item">Category</li>
-                    <li class="dropdown-item">Category</li>
-                    <li class="dropdown-item">Category</li>
-                </ul>
-            </div>
+            <a href="#" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#categoriesModal">ประเภทสินค้า</a>
         </div>
     </section>
 <?php
 }
 ?>
+<div class="modal fade" id="categoriesModal" tabindex="-1" aria-labelledby="categoriesModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="categoriesModalLabel">ประเภทสินค้า</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="list-item">
+            <?php require_once('../../services/categories/categories_navbar_bottom.php') ?>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
