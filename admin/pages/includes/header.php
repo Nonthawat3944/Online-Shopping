@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../assets/css/dataTables.bootstrap5.min.css" />
-    <link rel="stylesheet" href="../../assets/css/style_admin.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <title>CSEMN | Admin Portal</title>
 </head>
 

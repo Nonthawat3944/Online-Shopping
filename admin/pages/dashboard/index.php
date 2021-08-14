@@ -152,3 +152,4 @@ if (isset($_GET['logout'])) {
     </div>
 </main>
 <?php include_once('../includes/script.php') ?>
+<script src="../../assets/js/script.js"></script>
