@@ -12,7 +12,7 @@ function isActive($data)
         <nav class="navbar-dark">
             <ul class="navbar-nav">
                 <li>
-                    <a class="nav-link px-3" href="/">
+                    <a class="nav-link px-3" href="../../../">
                         <span class="me-2"><i class="bi bi-house-fill"></i></span>
                         <span>หน้าร้านค้า</span>
                     </a>
