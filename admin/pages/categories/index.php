@@ -13,13 +13,5 @@ if (isset($_GET['logout'])) {
 <?php include_once('../includes/navbar.php') ?>
 <?php include_once('../includes/sidebar.php') ?>
 
-<main class="mt-5 pt-3">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                
-            </div>
-        </div>
-    </div>
-</main>
+
 <?php include_once('../includes/script.php') ?>
