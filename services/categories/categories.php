@@ -16,10 +16,8 @@ try {
         <div class="category-list-item card-body">
             <?php
             foreach ($categories as $c) {
-                ?>
-                <div class="category-item list-group-item list-group-item-action">
-                    <a href="?category=<?= $c['id'] ?>" class="text-decoration-none text-dark"><?= $c['category'] ?></a>
-                </div>
+            ?>
+                <a href="?c=<?= $c['id'] ?>&category=<?= $c['category'] ?>" class="category-item list-group-item list-group-item-action"><?= $c['category'] ?></a>
             <?php
             }
             ?>

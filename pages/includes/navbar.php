@@ -58,7 +58,7 @@
             <div class="container-xxl py-1">
                 <div class="row">
                     <div class="col-6 text-start">
-                        <h3 class="mb-0"><a class="text-decoration-none text-white" href="#">CSEMN</a></h3>
+                        <h3 class="mb-0"><a class="text-decoration-none text-white" href="../../">CSEMN</a></h3>
                     </div>
                     <div class="col-6 text-end">
                         <button class="btn btn-sm btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
@@ -81,7 +81,7 @@
             <div class="container-xxl py-3">
                 <div class="row">
                     <div class="mb-2 col-lg-3 text-lg-start text-center">
-                        <h3><a class="text-decoration-none text-white" href="#">CSEMN</a></h3>
+                        <h3><a class="text-decoration-none text-white" href="../../">CSEMN</a></h3>
                     </div>
                     <div class="mb-2 col-lg-5">
                         <form method="GET" class="d-flex w-100">

@@ -12,6 +12,8 @@
         include_once('../products/product_details.php');
     } elseif (isset($_GET['search'])) {
         include_once('../products/product_search.php');
+    } elseif (isset($_GET['category'])) {
+        include_once('../products/product_category.php');
     } elseif (isset($_GET['account'])) {
         include_once('../account/index.php');
     } else {
