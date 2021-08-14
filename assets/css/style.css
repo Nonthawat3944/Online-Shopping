@@ -128,7 +128,7 @@ footer {
     footer {
         padding-bottom: 5vh;
     }
-    .navbar-main, .product-display, .cart-list, .cart-list-form-order, .wishlist-list, .order-list, .order-header {
+    .navbar-main, .product-display, .cart-list, .cart-list-form-order, .wishlist-list, .order-list, .order-header, .user-menu {
         display: none;
     }
 }
@@ -136,7 +136,7 @@ footer {
 /* Responsive for Website */
 
 @media screen and (min-width: 401px) {
-    .navbar-app, .product-display-app, .navbar-bottom, .cart-list-app , .wishlist-list-app, .order-list-app, .order-header-app {
+    .navbar-app, .product-display-app, .navbar-bottom, .cart-list-app, .wishlist-list-app, .order-list-app, .order-header-app, .user-menu-app {
         display: none;
     }
     .cart-list {
@@ -154,12 +154,10 @@ footer {
     .cart-item-details .cart-item-title ul li:first-child strong a:hover, .wishlist-item-details .wishlist-item-title ul li:first-child strong a:hover {
         opacity: 0.5;
     }
-
     .wishlist-list, .order-list {
         height: 475px;
         overflow-y: auto;
     }
-
     .wishlist-item-image {
         margin-right: 1rem;
     }

@@ -7,13 +7,13 @@
                     <a class="text-white nav-link nav-hover" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">ติดต่อเรา</a>
                 </li>
             </ul>
-
             <ul class="navbar-nav mb-lg-0 justify-content-end">
                 <?php
                 if (isset($_SESSION['U_ID'])) {
                 ?>
                     <li class="nav-item d-flex">
-                        <div class="dropdown me-2">
+                        <a class="user-menu-app text-white nav-link nav-hover me-2" href="#" data-bs-toggle="modal" data-bs-target="#userMenuModal"><?= $_SESSION['U_USERNAME'] ?></a>
+                        <div class="user-menu dropdown me-2">
                             <a class="nav-link nav-hover dropdown-toggle text-white" href="#" id="user_data" data-bs-toggle="dropdown" aria-expanded="false">
                                 <?= $_SESSION['U_USERNAME'] ?>
                             </a>
@@ -27,7 +27,7 @@
                             </ul>
                         </div>
                         <span class="nav-link me-2 text-white">|</span>
-                        <a class="nav-link nav-hover text-white"href="?logout" onclick="return confirm('ต้องการออกจากระบบ ?')">ออกจากระบบ</a>
+                        <a class="nav-link nav-hover text-white" href="?logout" onclick="return confirm('ต้องการออกจากระบบ ?')">ออกจากระบบ</a>
                     </li>
                 <?php
                 } else {
@@ -123,35 +123,55 @@ if (removeNavMain('auth') == false) {
 }
 ?>
 <div class="modal fade" id="categoriesModal" tabindex="-1" aria-labelledby="categoriesModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="categoriesModalLabel">ประเภทสินค้า</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="list-item">
-            <?php require_once('../../services/categories/categories_navbar_bottom.php') ?>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="categoriesModalLabel">ประเภทสินค้า</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="list-item">
+                    <?php require_once('../../services/categories/categories_navbar_bottom.php') ?>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
+<div class="modal fade" id="userMenuModal" tabindex="-1" aria-labelledby="userMenuModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="userMenuModalLabel"><?= $_SESSION['U_USERNAME'] ?></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card card-body">
+                    <?= $_SESSION['U_ROLE'] === true ? '<a class="btn btn-info w-100 mb-2" href="../../admin/">จัดการร้านค้า</a>' : '' ?>
+                    <a class="btn btn-info w-100 mb-2" href="?account">บัญชีผู้ใช้</a>
+                    <a class="btn btn-info w-100 mb-2" href="?account=order">การซื้อของฉัน</a>
+                    <a class="btn btn-info w-100 mb-2" href="?cart">ตะกร้าสินค้า</a>
+                    <a class="btn btn-info w-100 mb-2" href="?account=wishlist">สินค้าที่ถูกใจ</a>
+                    <a class="btn btn-danger w-100" href="?logout" onclick="return confirm('ต้องการออกจากระบบ ?')">ออกจากระบบ</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
