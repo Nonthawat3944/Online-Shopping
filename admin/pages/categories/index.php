@@ -22,12 +22,12 @@ require_once('../../services/session.php');
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="categoriesTable" class="table table-striped data-table" style="width: 100%">
+                            <table id="categoriesTable" class="table table-striped data-table">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>ประเภทสินค้า</th>
-                                        <th>จัดการ</th>
+                                        <th style='white-space:nowrap;'>ประเภทสินค้า</th>
+                                        <th style='white-space:nowrap;'>จัดการ</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -36,8 +36,8 @@ require_once('../../services/session.php');
                                 <tfoot>
                                     <tr>
                                         <th>#</th>
-                                        <th>ประเภทสินค้า</th>
-                                        <th>จัดการ</th>
+                                        <th style='white-space:nowrap;'>ประเภทสินค้า</th>
+                                        <th style='white-space:nowrap;'>จัดการ</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -65,7 +65,7 @@ require_once('../../services/session.php');
                         exit();
                     }
                 } else {
-                ?>
+                    ?>
                     <div class="card">
                         <div class="card-header">
                             เพิ่มประเภทสินค้า

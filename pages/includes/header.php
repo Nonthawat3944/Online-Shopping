@@ -24,7 +24,7 @@ if(isset($_GET['logout'])) {
     <link rel="stylesheet" href="../../assets/css/style.css">
     <?php
 
-    if (isset($_GET['account']) && !isset($_GET['order_details'])) {
+    if ((isset($_GET['account']) && !isset($_GET['order_details'])) || isset($_GET['pd'])) {
     ?>
         <style>
             @media screen and (min-width: 401px) {

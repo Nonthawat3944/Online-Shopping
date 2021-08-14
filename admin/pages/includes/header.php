@@ -19,6 +19,7 @@ if (isset($_GET['logout'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../assets/css/dataTables.bootstrap5.min.css" />
     <link rel="stylesheet" href="./../../assets/css/styleAdmin.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
     <title>CSEMN | Admin Portal</title>
 </head>
 
