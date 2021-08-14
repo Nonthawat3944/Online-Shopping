@@ -50,12 +50,24 @@ require_once('../../services/session.php');
                 if (isset($_GET['categories']) && $_GET['categories'] == "update") {
                     require_once('../../services/categories/edit.php');
                 } elseif (isset($_GET['categories']) && $_GET['categories'] == "delete") {
-
+                    try {
+                        $sql = "DELETE FROM categories WHERE id = :id";
+                        $stmt = $connect->prepare($sql);
+                        $stmt->execute(array(':id' => $_GET['id']));
+                ?>
+                        <script>
+                            alert('ลบประเภทสินค้าเรียบร้อย')
+                            location.href = '../categories/'
+                        </script>
+                    <?php
+                    } catch (PDOException $e) {
+                        echo "เกิดข้อผิดพลาด : " . $e->getMessage();
+                        exit();
+                    }
                 } else {
                 ?>
                     <div class="card">
                         <div class="card-header">
-                            <span class="me-2"><i class="bi bi-plus-circle-fill"></i></span>
                             เพิ่มประเภทสินค้า
                         </div>
                         <div class="card-body">

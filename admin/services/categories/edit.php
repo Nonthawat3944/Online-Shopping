@@ -11,7 +11,6 @@ try {
 ?>
 <div class="card">
     <div class="card-header">
-        <span class="me-2"><i class="bi bi-check-circle-fill"></i></span>
         แก้ไขประเภทสินค้า
     </div>
     <div class="card-body">
@@ -21,7 +20,7 @@ try {
                 <input type="hidden" name="id" value="<?= $result['id'] ?>" required>
                 <input type="text" name="category" class="form-control" value="<?= $result['category'] ?>" required>
             </div>
-            <input type="submit" class="btn btn-success w-100" name="insert" value="บันทึกข้อมูล">
+            <input type="submit" class="btn btn-success w-100" name="update" value="บันทึกข้อมูล">
         </form>
     </div>
 </div>
