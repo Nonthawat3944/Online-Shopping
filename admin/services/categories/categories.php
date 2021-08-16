@@ -1,6 +1,6 @@
 <?php
 try {
-    $stmt_categories = $connect->prepare("SELECT * FROM categories ORDER BY id ASC");
+    $stmt_categories = $connect->prepare("SELECT * FROM categories ORDER BY category ASC");
     $stmt_categories->execute();
     $categories = $stmt_categories->fetchAll();
 } catch (PDOException $e) {

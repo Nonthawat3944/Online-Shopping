@@ -19,8 +19,29 @@ require_once('../../services/session.php');
                 <?php
                 if (isset($_GET['products']) && $_GET['products'] == "insert") {
                     include_once('./form_insert.php');
-                } else {
+                } elseif (isset($_GET['products']) && $_GET['products'] == "view") {
+                    include_once('./product_view.php');
+                } elseif (isset($_GET['products']) && $_GET['products'] == "update") {
+                    include_once('./form_update.php');
+                    include_once('./product_view.php');
+                } elseif (isset($_GET['products']) && $_GET['products'] == "delete") {
+                    unlink('../../uploads/' . "/" . $_GET['image']);
+                    try {
+                        $sql = "DELETE FROM products WHERE id = :id";
+                        $stmt = $connect->prepare($sql);
+                        $stmt->execute(array(':id' => $_GET['id']));
                 ?>
+                        <script>
+                            alert('ลบสินค้าเรียบร้อย')
+                            location.href = '../products/'
+                        </script>
+                    <?php
+                    } catch (PDOException $e) {
+                        echo "เกิดข้อผิดพลาด : " . $e->getMessage();
+                        exit();
+                    }
+                } else {
+                    ?>
                     <div class="card h-100">
                         <div class="card-header">
                             <span><i class="bi bi-table me-2"></i></span> รายการสินค้า
@@ -33,8 +54,6 @@ require_once('../../services/session.php');
                                             <th style='white-space:nowrap;'>รหัสสินค้า</th>
                                             <th style='white-space:nowrap;'>ประเภทสินค้า</th>
                                             <th style='white-space:nowrap;'>สินค้า</th>
-                                            <th style='white-space:nowrap;'>ราคา</th>
-                                            <th style='white-space:nowrap;'>วันที่เพิ่ม</th>
                                             <th style='white-space:nowrap;'>จัดการ</th>
                                         </tr>
                                     </thead>
@@ -46,8 +65,6 @@ require_once('../../services/session.php');
                                             <th style='white-space:nowrap;'>รหัสสินค้า</th>
                                             <th style='white-space:nowrap;'>ประเภทสินค้า</th>
                                             <th style='white-space:nowrap;'>สินค้า</th>
-                                            <th style='white-space:nowrap;'>ราคา</th>
-                                            <th style='white-space:nowrap;'>วันที่เพิ่ม</th>
                                             <th style='white-space:nowrap;'>จัดการ</th>
                                         </tr>
                                     </tfoot>
@@ -68,9 +85,5 @@ require_once('../../services/session.php');
     $(document).ready(function() {
         $('#categoriesTable').DataTable();
     });
-    ClassicEditor
-        .create(document.querySelector('#form_insert_details'))
-        .catch(error => {
-            console.error(error);
-        });
+    CKEDITOR.replace('details');
 </script>
