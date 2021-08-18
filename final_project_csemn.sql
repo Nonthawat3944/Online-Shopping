@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2021 at 08:40 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Generation Time: Aug 18, 2021 at 02:37 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,6 +35,13 @@ CREATE TABLE `banks` (
   `bank_number` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `banks`
+--
+
+INSERT INTO `banks` (`id`, `bank`, `office`, `fullname`, `bank_number`) VALUES
+(2, 'ออมสิน', 'บางปะอิน', 'นนทวัฒน์ แหล่พั่ว', '1234567890');
+
 -- --------------------------------------------------------
 
 --
@@ -51,7 +58,7 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `banner`) VALUES
-(1, 'bcdc94c77c225d37e8a12c50ffd0dac8.png'),
+(1, '185b57a7315df4d3a2a0b14b1d419f54.png'),
 (2, '94ce76cbb94999125bd2adaa1c086f35.png'),
 (3, 'f11c3881f9854a3b69d7399bdeebacb1.png');
 
@@ -224,7 +231,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `firstname`, `lastname`, `email`, `password`, `admin`, `created_at`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin@gmail.com', '$2y$10$.mdYTYMeOmn2yDIOqV2zqODHwRARHmX/BAXqX2q0a4i/.9ArdJ4J6', 1, '2021-05-29 08:31:17');
+(1, 'admin', 'admin', 'admin', 'admin@gmail.com', '$2y$10$.mdYTYMeOmn2yDIOqV2zqODHwRARHmX/BAXqX2q0a4i/.9ArdJ4J6', 1, '2021-05-29 08:31:17'),
+(2, 'viewview', 'นนทวัฒน์', 'แหล่พั่ว', 'viewview2878@gmail.com', '$2y$10$k2cLduegSzFD5kE6VxBH3ercWV78SllwTQ11O4S0u/5oRuPjtylEi', 0, '2021-08-18 06:21:57');
 
 -- --------------------------------------------------------
 
@@ -316,7 +324,7 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT for table `banks`
 --
 ALTER TABLE `banks`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `banners`
@@ -370,7 +378,7 @@ ALTER TABLE `shop`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `wishlist`

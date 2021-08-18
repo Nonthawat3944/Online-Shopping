@@ -4,7 +4,7 @@ if (isset($_SESSION['U_ROLE'])) {
 ?>
         <script>
             alert('คุณไม่มีสิทธิในการเข้าถึง')
-            window.location = '../../../'
+            window.location = '../../'
         </script>
     <?php
     }
@@ -12,7 +12,7 @@ if (isset($_SESSION['U_ROLE'])) {
     ?>
     <script>
         alert('เข้าสู่ระบบก่อน')
-        window.location = '../pages/auth/login.php'
+        window.location = '../../../pages/auth/login.php'
     </script>
 <?php
 }

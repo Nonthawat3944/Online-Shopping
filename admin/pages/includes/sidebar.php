@@ -69,7 +69,7 @@ function isActive($data)
                     <hr class="dropdown-divider bg-light">
                 </li>
                 <li class="px-3">
-                    <a href="?logout" class="btn btn-outline-danger w-100">ออกจากระบบ</a>
+                    <a href="?logout" class="btn btn-outline-danger w-100" onclick="return confirm('ต้องการออกจากระบบ ?')">ออกจากระบบ</a>
                 </li>
             </ul>
         </nav>

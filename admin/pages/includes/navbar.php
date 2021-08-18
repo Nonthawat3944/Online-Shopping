@@ -13,7 +13,7 @@
                     <a class="nav-link me-2">|</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-danger" href="?logout">ออกจากระบบ</a>
+                    <a class="btn btn-outline-danger" href="?logout" onclick="return confirm('ต้องการออกจากระบบ ?')">ออกจากระบบ</a>
                 </li>
             </ul>
         </div>
