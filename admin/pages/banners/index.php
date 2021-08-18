@@ -14,8 +14,15 @@ require_once('../../services/session.php');
                 <h4>การโฆษณา</h4>
             </div>
         </div>
-        
-
+        <div class="row">
+            <?php
+            if (isset($_GET['banners']) && $_GET['banners'] == "update") {
+                include_once('./form_update.php');
+            } else {
+                require_once('../../services/banners/banners.php');
+            }
+            ?>
+        </div>
     </div>
 </main>
 
