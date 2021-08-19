@@ -35,3 +35,42 @@
 <?php include_once('../includes/footer.php') ?>
 <!-- Script  -->
 <?php include_once('../includes/script.php') ?>
+<?php
+if ($row_s <= 4) {
+?>
+    <script>
+        let rowS = <?= $row_s == "" ? 0 : $row_s ?>;
+        let w = window.innerWidth;
+        let footer = document.querySelector('.footer');
+        if (w < 401 && rowS <= 2) {
+            footer.style.position = 'fixed';
+            footer.style.bottom = '0';
+            footer.style.width = '100%';
+        } 
+        if (w > 400 && rowS <= 4 ) {
+            footer.style.position = 'fixed';
+            footer.style.bottom = '0';
+            footer.style.width = '100%';
+        }
+    </script>
+<?php
+}
+if ($row_c <= 4) {
+?>
+    <script>
+        let rowC = <?= $row_c ?>;
+        if (w < 401 && rowC <= 2) {
+            footer.style.position = 'fixed';
+            footer.style.bottom = '0';
+            footer.style.width = '100%';
+        } 
+        if (w > 400 && rowC <= 4 ) {
+            footer.style.position = 'fixed';
+            footer.style.bottom = '0';
+            footer.style.width = '100%';
+        }
+    </script>
+<?php
+}
+
+?>

@@ -1,4 +1,4 @@
-<footer class="shadow">
+<footer class="footer shadow">
     <div class="container py-3">
         <h3>ติดต่อเรา</h3>
         <hr>

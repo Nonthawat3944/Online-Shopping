@@ -1,10 +1,10 @@
-<?php 
+<?php
 require_once('../../admin/services/connect.php');
-if(isset($_GET['logout'])) {
+if (isset($_GET['logout'])) {
     session_destroy();
-    ?>
+?>
     <meta http-equiv="refresh" content="0; url=../../">
-    <?php
+<?php
 }
 ?>
 <!DOCTYPE html>
@@ -22,23 +22,21 @@ if(isset($_GET['logout'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <?php
-
-    if ((isset($_GET['account']) && !isset($_GET['order_details'])) || isset($_GET['pd'])) {
-    ?>
-        <style>
-            @media screen and (min-width: 401px) {
-                footer {
-                    position: fixed !important;
-                    bottom: 0;
-                    width: 100%;
-                }
+    <style>
+        <?php
+        if (isset($_GET['account'])) {
+        ?>@media screen and (min-width: 401px) {
+            footer {
+                position: fixed !important;
+                bottom: 0;
+                width: 100%;
             }
-        </style>
-    <?php
-    }
+        }
+        <?php
+        }
+        ?>
+    </style>
 
-    ?>
 </head>
 
 <body>
