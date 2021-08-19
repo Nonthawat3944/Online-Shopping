@@ -21,7 +21,7 @@ require_once('../../services/session.php');
                         <h1><strong>รายการสั่งซื้อ</strong></h1>
                     </div>
                     <div class="card-footer">
-                        <a href="" class="d-flex text-decoration-none text-white">
+                        <a href="../orders/" class="d-flex text-decoration-none text-white">
                             คลิกจัดการระบบ
                             <span class="ms-auto">
                                 <i class="bi bi-chevron-right"></i>
@@ -36,7 +36,7 @@ require_once('../../services/session.php');
                         <h1><strong>รายชื่อสมาชิก</strong></h1>
                     </div>
                     <div class="card-footer">
-                        <a href="" class="d-flex text-decoration-none text-dark">
+                        <a href="../users/" class="d-flex text-decoration-none text-dark">
                             คลิกจัดการระบบ
                             <span class="ms-auto">
                                 <i class="bi bi-chevron-right"></i>
@@ -47,47 +47,73 @@ require_once('../../services/session.php');
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card bg-success text-white h-100">
-                    <div class="card-body py-5">Success Card</div>
-                    <div class="card-footer d-flex">
-                        View Details
-                        <span class="ms-auto">
-                            <i class="bi bi-chevron-right"></i>
-                        </span>
+                    <div class="card-body py-5">
+                        <h1><strong>รายการสินค้า</strong></h1>
+                    </div>
+                    <div class="card-footer">
+                        <a href="../products/" class="d-flex text-decoration-none text-white">
+                            คลิกจัดการระบบ
+                            <span class="ms-auto">
+                                <i class="bi bi-chevron-right"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card bg-danger text-white h-100">
-                    <div class="card-body py-5">Danger Card</div>
-                    <div class="card-footer d-flex">
-                        View Details
-                        <span class="ms-auto">
-                            <i class="bi bi-chevron-right"></i>
-                        </span>
+                    <div class="card-body py-5">
+                        <h1><strong>ประเภทสินค้า</strong></h1>
+                    </div>
+                    <div class="card-footer">
+                        <a href="../categories/" class="d-flex text-decoration-none text-white">
+                            คลิกจัดการระบบ
+                            <span class="ms-auto">
+                                <i class="bi bi-chevron-right"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 mb-3">
-                <div class="card h-100">
-                    <div class="card-header">
-                        <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
-                        Area Chart Example
+            <div class="col-md-3 mb-3 ">
+                <div class="card bg-light text-dark h-100 shadow-sm">
+                    <div class="card-body py-5">
+                        <h1><strong>รายการสั่งซื้อ</strong></h1>
                     </div>
-                    <div class="card-body">
-                        <canvas class="chart" width="400" height="200"></canvas>
+                    <div class="card-footer">
+                        <span>ยอดขายวันนี้</span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 mb-3">
-                <div class="card h-100">
-                    <div class="card-header">
-                        <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
-                        Area Chart Example
+            <div class="col-md-3 mb-3 ">
+                <div class="card bg-light text-dark h-100 shadow-sm">
+                    <div class="card-body py-5">
+                        <h1><strong>รายการสั่งซื้อ</strong></h1>
                     </div>
-                    <div class="card-body">
-                        <canvas class="chart" width="400" height="200"></canvas>
+                    <div class="card-footer">
+                        <span>ยอดขายเดือนนี้</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 ">
+                <div class="card bg-light text-dark h-100 shadow-sm">
+                    <div class="card-body py-5">
+                        <h1><strong>รายการสั่งซื้อวันนี้</strong></h1>
+                    </div>
+                    <div class="card-footer">
+                        <span>รายการสั่งซื้อวันนี้</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 ">
+                <div class="card bg-light text-dark h-100 shadow-sm">
+                    <div class="card-body py-5">
+                        <h1><strong>รายการสั่งซื้อวันนี้</strong></h1>
+                    </div>
+                    <div class="card-footer">
+                        <span>สมาชิกใหม่เดือนนี้</span>
                     </div>
                 </div>
             </div>
