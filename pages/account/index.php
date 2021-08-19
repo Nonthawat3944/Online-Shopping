@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION['U_ID'])) {
+    ?>
+    <meta http-equiv="refresh" content="0; url=../auth/login.php">
+    <?php
+    exit();
+}
+?>
 <div class="row account-display">
     <div class="col-md-3 px-1 mb-lg-0 mb-2">
         <?php include_once('../account/navbar.php') ?>

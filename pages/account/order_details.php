@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION['U_ID'])) {
+    ?>
+    <meta http-equiv="refresh" content="0; url=../auth/login.php">
+    <?php
+    exit();
+}
+?>
 <div class="card card-body shadow-sm">
     <div class="order-header">
         <div class="d-flex justify-content-between align-items-center">

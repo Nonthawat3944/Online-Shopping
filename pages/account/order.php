@@ -1,4 +1,12 @@
 <?php
+if (!isset($_SESSION['U_ID'])) {
+    ?>
+    <meta http-equiv="refresh" content="0; url=../auth/login.php">
+    <?php
+    exit();
+}
+?>
+<?php
 
 if (isset($_GET['order_details'])) {
     include_once('../account/order_details.php');
