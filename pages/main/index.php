@@ -36,7 +36,7 @@
 <!-- Script  -->
 <?php include_once('../includes/script.php') ?>
 <?php
-if ($row_s <= 4) {
+if (isset($row_s) && $row_s <= 4) {
 ?>
     <script>
         let rowS = <?= $row_s == "" ? 0 : $row_s ?>;
@@ -55,10 +55,11 @@ if ($row_s <= 4) {
     </script>
 <?php
 }
-if ($row_c <= 4) {
+
+if (isset($row_c) && $row_c <= 4) {
 ?>
     <script>
-        let rowC = <?= $row_c ?>;
+        let rowC = <?= $row_c == "" ? 0 : $row_c ?>;
         if (w < 401 && rowC <= 2) {
             footer.style.position = 'fixed';
             footer.style.bottom = '0';

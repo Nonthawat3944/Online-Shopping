@@ -14,7 +14,7 @@ if (isset($_GET['page'])) {
     $page = 1;
 }
 
-$record_show = 1;
+$record_show = 12;
 $offset = ($page - 1) * $record_show;
 $page_total = ceil($row / $record_show);
 
@@ -25,7 +25,6 @@ try {
     ORDER BY created_at DESC LIMIT $offset, $record_show");
     $stmt_products->execute();
     $products = $stmt_products->fetchAll();
-    $row_p = $stmt_products->rowCount();
 
 } catch (PDOException $e) {
     echo "เกิดข้อผิดพลาด : " . $e->getMessage();
