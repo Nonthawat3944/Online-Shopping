@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2021 at 02:37 PM
+-- Generation Time: Aug 19, 2021 at 05:04 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -114,10 +114,10 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `title`, `contact`) VALUES
-(1, 'Facebook', 'Your Facebook'),
-(2, 'Line', 'ID Line'),
-(3, 'Tel.', '0987654321'),
-(4, 'Email', 'test@email.com');
+(1, 'Facebook', 'View View'),
+(2, 'Line', '@viewview_2878'),
+(3, 'Tel.', '0631014897'),
+(4, 'Email', 'admin@email.com');
 
 -- --------------------------------------------------------
 
@@ -204,8 +204,8 @@ CREATE TABLE `shop` (
 
 INSERT INTO `shop` (`id`, `title`) VALUES
 (1, '35'),
-(2, 'Shop Name'),
-(3, 'Title Website'),
+(2, 'CSEMN Shopping Online'),
+(3, 'CSEMN Shopping Online'),
 (4, 'Website Description'),
 (5, 'JXqFg1nOAobVMvwOGUOkjR2Ccf4sSWZOihZhHsQKf3Z');
 
