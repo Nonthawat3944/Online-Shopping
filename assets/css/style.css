@@ -131,6 +131,7 @@ footer {
     .navbar-main, .product-display, .cart-list, .cart-list-form-order, .wishlist-list, .order-list, .order-header, .user-menu {
         display: none;
     }
+
 }
 
 /* Responsive for Website */

@@ -6,7 +6,7 @@ if (!isset($_SESSION['U_ID'])) {
     exit();
 }
 ?>
-<div class="row account-display">
+<div class="row account-display mb-5">
     <div class="col-md-3 px-1 mb-lg-0 mb-2">
         <?php include_once('../account/navbar.php') ?>
     </div>

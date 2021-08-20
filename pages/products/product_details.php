@@ -1,3 +1,10 @@
+<?php require_once('../../services/products/product_views.php') ?>
+<?php
+if (isset($_GET['wishlist'])) {
+    require_once('../../services/products/product_wishlist.php');
+    exit();
+}
+?>
 <?php require_once('../../services/products/product_details.php') ?>
 <div class="card mx-0 p-0 mb-5">
     <div class="card-body">
@@ -13,7 +20,7 @@
                 <h6><strong>รายละเอียดของสินค้า</strong></h6>
                 <p><?= $product['details'] ?></p>
                 <hr>
-                <form action="" method="post">
+                <form action="../../services/products/product_cart.php" method="post">
                     <div class="row">
                         <div class="col-12 mb-4">
                             <?= $product['quantity'] == 0 ? '<strong class="text-danger"><span class="text-danger">สินค้าหมด</span></strong>'
@@ -48,11 +55,11 @@
                             }
                             if ($row_wishlist > 0) {
                             ?>
-                                <a href="?wishlist=out&id=<?= $product['id'] ?>" class="btn btn-danger" onclick="return confirm('ต้องการลบออกจากสินค้าที่ถูกใจ ?')"><i class="bi bi-heart-fill me-2"></i>ถูกใจ</a>
+                                <a href="?wishlist=out&pd=<?= $product['id'] ?>" class="btn btn-danger" onclick="return confirm('ต้องการลบออกจากสินค้าที่ถูกใจ ?')"><i class="bi bi-heart-fill me-2"></i>ถูกใจ</a>
                             <?php
                             } else {
                             ?>
-                                <a href="?wishlist=in&id=" class="btn btn-outline-danger" onclick="return confirm('ต้องการเพิ่มไปยังสินค้าที่ถูกใจ ?')"><i class="bi bi-heart me-2"></i>ถูกใจ</a>
+                                <a href="?wishlist=in&pd=<?= $product['id'] ?>" class="btn btn-outline-danger" onclick="return confirm('ต้องการเพิ่มไปยังสินค้าที่ถูกใจ ?')"><i class="bi bi-heart me-2"></i>ถูกใจ</a>
                             <?php
                             }
                             ?>

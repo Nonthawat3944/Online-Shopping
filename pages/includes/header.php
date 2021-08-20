@@ -1,5 +1,14 @@
 <?php
 require_once('../../admin/services/connect.php');
+try {
+    $stmt_shop_db = $connect->prepare("SELECT * FROM shop ORDER BY id ASC");
+    $stmt_shop_db->execute();
+    $shop_db = $stmt_shop_db->fetchAll();
+} catch (PDOException $e) {
+    echo "เกิดข้อผิดพลาด : " . $e->getMessage();
+    exit();
+}
+
 if (isset($_GET['logout'])) {
     session_destroy();
 ?>
@@ -14,7 +23,8 @@ if (isset($_GET['logout'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSEMN | Online Shopping 24 Hr.</title>
+    <meta name="description" content="<?= $shop_db[3]['title'] ?>">
+    <title><?= $shop_db[2]['title'] ?></title>
 
     <!-- Style Sheet -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +34,7 @@ if (isset($_GET['logout'])) {
     <link rel="stylesheet" href="../../assets/css/style.css">
     <style>
         <?php
-        if (isset($_GET['account'])) {
+        if (isset($_GET['account']) && !isset($_GET['order_details'])) {
         ?>@media screen and (min-width: 401px) {
             footer {
                 position: fixed !important;
@@ -32,6 +42,7 @@ if (isset($_GET['logout'])) {
                 width: 100%;
             }
         }
+
         <?php
         }
         ?>

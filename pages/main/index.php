@@ -60,6 +60,9 @@ if (isset($row_c) && $row_c <= 4) {
 ?>
     <script>
         let rowC = <?= $row_c == "" ? 0 : $row_c ?>;
+        let w = window.innerWidth;
+        let footer = document.querySelector('.footer');
+
         if (w < 401 && rowC <= 2) {
             footer.style.position = 'fixed';
             footer.style.bottom = '0';

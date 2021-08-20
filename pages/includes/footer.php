@@ -5,10 +5,13 @@
         <div class="row">
             <div class="col-md-6">
                 <ul>
-                    <li>Facebook : Your Facebook</li>
-                    <li>Line : Your Line</li>
-                    <li>Email : Your Email</li>
-                    <li>Tel. : You Phone Numbers</li>
+                    <?php
+                    foreach ($contacts as $value) {
+                    ?>
+                        <li><?= $value['title'] ?> : <?= $value['contact'] ?></li>
+                    <?php
+                    }
+                    ?>
                 </ul>
             </div>
             <div class="col-md-6"></div>

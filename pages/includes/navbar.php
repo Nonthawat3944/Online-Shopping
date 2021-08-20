@@ -57,10 +57,10 @@
         <section class="shadow navbar-app">
             <div class="container-xxl py-1">
                 <div class="row">
-                    <div class="col-6 text-start">
-                        <h3 class="mb-0"><a class="text-decoration-none text-white" href="../../">CSEMN</a></h3>
+                    <div class="col-9 text-start my-auto">
+                        <h6 class="mb-0"><a class="text-decoration-none text-white" href="../../"><?= $shop_db[1]['title'] ?></a></h6>
                     </div>
-                    <div class="col-6 text-end">
+                    <div class="col-3 px-0">
                         <button class="btn btn-sm btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
                             <i class="bi bi-search me-2"></i>ค้นหา
                         </button>
@@ -81,7 +81,7 @@
             <div class="container-xxl py-3">
                 <div class="row">
                     <div class="col-lg-3 text-lg-start text-center">
-                        <h3><a class="text-decoration-none text-white" href="../../">CSEMN</a></h3>
+                        <h3><a class="text-decoration-none text-white" href="../../"><?= $shop_db[1]['title'] ?></a></h3>
                     </div>
                     <div class="col-lg-5">
                         <form method="GET" class="d-flex w-100">
@@ -162,15 +162,29 @@ if (removeNavMain('auth') == false) {
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="contactModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="contactModalLabel">ติดต่อเรา</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <?php
+                try {
+                    $stmt_contact = $connect->prepare("SELECT * FROM contacts ORDER BY id ASC");
+                    $stmt_contact->execute();
+                    $contacts = $stmt_contact->fetchAll();
+                } catch (PDOException $e) {
+                    echo "เกิดข้อผิดพลาด : " . $e->getMessage();
+                    exit();
+                }
+                ?>
+                <ul>
+                    <?php
+                    foreach ($contacts as $value) {
+                    ?>
+                        <li><?= $value['title'] ?> : <?= $value['contact'] ?></li>
+                    <?php
+                    }
+                    ?>
+                </ul>
             </div>
         </div>
     </div>
