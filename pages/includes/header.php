@@ -31,10 +31,11 @@ if (isset($_GET['logout'])) {
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../../assets/css/style_main.css">
     <style>
         <?php
-        if (isset($_GET['account']) && !isset($_GET['order_details'])) {
+        if (isset($_GET['account']) && !isset($_GET['order_details']) && $_GET['account'] !== "order") {
         ?>@media screen and (min-width: 401px) {
             footer {
                 position: fixed !important;

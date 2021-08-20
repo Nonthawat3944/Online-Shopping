@@ -35,6 +35,27 @@
 <?php include_once('../includes/footer.php') ?>
 <!-- Script  -->
 <?php include_once('../includes/script.php') ?>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#ordersTable').DataTable();
+    })
+    $(function() {
+        $(".checkbox_input").click(function() { // เมื่อคลิก checkbox  ใดๆ  
+            if ($(this).prop("checked") == true) { // ตรวจสอบ property  การ ของ   
+                var indexObj = $(this).index(".checkbox_input"); //   
+                $(".checkbox_input").not(":eq(" + indexObj + ")").prop("checked", false); // ยกเลิกการคลิก รายการอื่น  
+            }
+        });
+
+        $("#form_checkbox").submit(function() { // เมื่อมีการส่งข้อมูลฟอร์ม  
+            if ($(".checkbox_input:checked").length == 0) { // ถ้าไม่มีการเลือก checkbox ใดๆ เลย  
+                alert("ยังไม่ได้เลือกธนาคารที่ใช้ชำระเงิน");
+                return false;
+            }
+        });
+
+    });
+</script>
 <?php
 if (isset($row_s) && $row_s <= 4) {
 ?>
@@ -46,8 +67,8 @@ if (isset($row_s) && $row_s <= 4) {
             footer.style.position = 'fixed';
             footer.style.bottom = '0';
             footer.style.width = '100%';
-        } 
-        if (w > 400 && rowS <= 4 ) {
+        }
+        if (w > 400 && rowS <= 4) {
             footer.style.position = 'fixed';
             footer.style.bottom = '0';
             footer.style.width = '100%';
@@ -67,8 +88,8 @@ if (isset($row_c) && $row_c <= 4) {
             footer.style.position = 'fixed';
             footer.style.bottom = '0';
             footer.style.width = '100%';
-        } 
-        if (w > 400 && rowC <= 4 ) {
+        }
+        if (w > 400 && rowC <= 4) {
             footer.style.position = 'fixed';
             footer.style.bottom = '0';
             footer.style.width = '100%';
@@ -76,5 +97,3 @@ if (isset($row_c) && $row_c <= 4) {
     </script>
 <?php
 }
-
-?>

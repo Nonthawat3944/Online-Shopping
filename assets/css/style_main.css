@@ -155,7 +155,7 @@ footer {
     .cart-item-details .cart-item-title ul li:first-child strong a:hover, .wishlist-item-details .wishlist-item-title ul li:first-child strong a:hover {
         opacity: 0.5;
     }
-    .wishlist-list, .order-list {
+    .wishlist-list {
         height: 475px;
         overflow-y: auto;
     }

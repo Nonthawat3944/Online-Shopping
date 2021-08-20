@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2021 at 05:04 PM
+-- Generation Time: Aug 20, 2021 at 04:38 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -75,6 +75,13 @@ CREATE TABLE `cart` (
   `cart_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `product_id`, `cart_quantity`) VALUES
+(7, 2, 4, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -141,6 +148,14 @@ CREATE TABLE `orders` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `code`, `user_id`, `customer`, `phone`, `address`, `status`, `payment`, `bank_id`, `shippingCost`, `total`, `image_payment`, `created_at`) VALUES
+(1, 'OR640800001', 2, 'นนทวัฒน์ แหล่พั่ว', '0631014897', 'วิทยาลัยเสริมทักษะพระภิกษุ สามเณร/บ้านเลน/บางปะอิน/พระนครศรีอยุธยา/13160', 1, 1, NULL, 35, 29624, NULL, '2021-08-20 08:10:14'),
+(2, 'OR640800002', 2, 'นนทวัฒน์ แหล่พั่ว', '0631014897', 'วิทยาลัยเสริมทักษะพระภิกษุ สามเณร/บ้านเลน/บางปะอิน/พระนครศรีอยุธยา/13160', 3, 2, 2, 35, 23025, '08f58e8cac70d365bfa66ff74a4095de.jpg', '2021-08-20 08:37:51');
+
 -- --------------------------------------------------------
 
 --
@@ -156,6 +171,16 @@ CREATE TABLE `pre_order` (
   `price` int(11) NOT NULL,
   `total_price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `pre_order`
+--
+
+INSERT INTO `pre_order` (`id`, `code`, `product`, `image`, `quantity`, `price`, `total_price`) VALUES
+(1, 'OR640800001', 'SMARTPHONE (สมาร์ทโฟน) HUAWEI NOVA7 [HW-NOVA7-(PU)] - PURPLE', '7147e313cb263e022482919eca29cd28.jpg', 1, 16900, 16900),
+(2, 'OR640800001', 'SMARTPHONE (สมาร์ทโฟน) REDMI 9C 6.53\" 5MP (13+2+2MP) 3/64GB SUNRISE ORANGE', 'e06b2e9be91f8f51546f54fc8d31f2f8.jpg', 1, 3699, 3699),
+(3, 'OR640800001', 'SMARTPHONE (สมาร์ทโฟน) XIAOMI REDMI NOTE 10 PRO 6.67', '46188263c0c54ad7515c8f7b5cf91172.jpg', 1, 8990, 8990),
+(4, 'OR640800002', 'SMARTPHONE (สมาร์ทโฟน) LENOVO LEGION PHONE DUEL 2 12GB/128GB (TITANIUM WHITE)', '744170e633c897e0816171663ac686f8.jpg', 1, 22990, 22990);
 
 -- --------------------------------------------------------
 
@@ -181,11 +206,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `category_id`, `code`, `product`, `details`, `price`, `quantity`, `image`, `views`, `created_at`) VALUES
-(4, 2, 'PD640800001', 'SMARTPHONE (สมาร์ทโฟน) ASUS ROG PHONE 5 256GB/16GB (PHANTOM BLACK)', '<p>&bull; Processor : Snapdragon 888 5G / Adreno 660<br />\r\n&bull; Display : 6.78&quot; (2448 x 1080) 144 Hz / 1 ms<br />\r\n&bull; Storage : 256GB<br />\r\n&bull; Memory : 16GB</p>\r\n', 29990, 100, 'ae29b09f65ffee65db1b0bf003311eb4.jpg', NULL, '2021-08-16 13:49:02'),
-(5, 3, 'PD640800005', 'SMARTPHONE (สมาร์ทโฟน) LENOVO LEGION PHONE DUEL 2 12GB/128GB (TITANIUM WHITE)', '<p>&bull; Processor : Snapdragon 888 5G / Adreno 660<br />\r\n&bull; Display : 6.92&quot; FHD (2460 x 1080) 144Hz<br />\r\n&bull; Storage : 128GB<br />\r\n&bull; Memory : 12GB</p>\r\n', 22990, 100, '744170e633c897e0816171663ac686f8.jpg', NULL, '2021-08-16 13:50:27'),
-(6, 5, 'PD640800006', 'SMARTPHONE (สมาร์ทโฟน) HUAWEI NOVA7 [HW-NOVA7-(PU)] - PURPLE', '<ul>\r\n	<li>Octa-Core 2.58GHz+2.4GHz+1.84GHz</li>\r\n	<li>32MP Front</li>\r\n	<li>64MP+8MP+8MP+2MP Back</li>\r\n</ul>\r\n', 16900, 100, '7147e313cb263e022482919eca29cd28.jpg', NULL, '2021-08-16 14:43:36'),
-(7, 4, 'PD640800007', 'SMARTPHONE (สมาร์ทโฟน) REDMI 9C 6.53\" 5MP (13+2+2MP) 3/64GB SUNRISE ORANGE', '<ul>\r\n	<li>CPU : 6.53 &quot;HD + Dot DROP จอแสดงผล</li>\r\n	<li>RAM + ROM : 3GB + 64GB</li>\r\n	<li>กล้อง : 13 MP AI Triple กล้อง + 5MP กล้องด้านหน้า</li>\r\n	<li>แบตเตอรี่ : 5000mAh(Typ)</li>\r\n	<li>OS : MIUI,Global Version,สนับสนุน OTA Update</li>\r\n	<li>WIFI, Bluetooth 5.0, GPS, OTG</li>\r\n</ul>\r\n', 3699, 100, 'e06b2e9be91f8f51546f54fc8d31f2f8.jpg', NULL, '2021-08-16 14:45:35'),
-(8, 6, 'PD640800008', 'SMARTPHONE (สมาร์ทโฟน) XIAOMI REDMI NOTE 10 PRO 6.67', '<p>618 GPU/6GB+64GB | 6GB+128GB | 8GB+128GB LPDDR4X RAM + UFS 2.2/6.67&quot; AMOLED DotDisplay/108MP+8MP+5MP+2MP/16MP/5020mAh/2.4GHz/5GHz Wi-Fi บลูทูธ 5.1/MIUI 12 บน Android 11</p>\r\n', 8990, 100, '46188263c0c54ad7515c8f7b5cf91172.jpg', NULL, '2021-08-16 14:46:36');
+(4, 2, 'PD640800001', 'SMARTPHONE (สมาร์ทโฟน) ASUS ROG PHONE 5 256GB/16GB (PHANTOM BLACK)', '<p>&bull; Processor : Snapdragon 888 5G / Adreno 660<br />\r\n&bull; Display : 6.78&quot; (2448 x 1080) 144 Hz / 1 ms<br />\r\n&bull; Storage : 256GB<br />\r\n&bull; Memory : 16GB</p>\r\n', 29990, 100, 'ae29b09f65ffee65db1b0bf003311eb4.jpg', 5, '2021-08-16 13:49:02'),
+(5, 3, 'PD640800005', 'SMARTPHONE (สมาร์ทโฟน) LENOVO LEGION PHONE DUEL 2 12GB/128GB (TITANIUM WHITE)', '<p>&bull; Processor : Snapdragon 888 5G / Adreno 660<br />\r\n&bull; Display : 6.92&quot; FHD (2460 x 1080) 144Hz<br />\r\n&bull; Storage : 128GB<br />\r\n&bull; Memory : 12GB</p>\r\n', 22990, 99, '744170e633c897e0816171663ac686f8.jpg', 2, '2021-08-16 13:50:27'),
+(6, 5, 'PD640800006', 'SMARTPHONE (สมาร์ทโฟน) HUAWEI NOVA7 [HW-NOVA7-(PU)] - PURPLE', '<ul>\r\n	<li>Octa-Core 2.58GHz+2.4GHz+1.84GHz</li>\r\n	<li>32MP Front</li>\r\n	<li>64MP+8MP+8MP+2MP Back</li>\r\n</ul>\r\n', 16900, 99, '7147e313cb263e022482919eca29cd28.jpg', 15, '2021-08-16 14:43:36'),
+(7, 4, 'PD640800007', 'SMARTPHONE (สมาร์ทโฟน) REDMI 9C 6.53\" 5MP (13+2+2MP) 3/64GB SUNRISE ORANGE', '<ul>\r\n	<li>CPU : 6.53 &quot;HD + Dot DROP จอแสดงผล</li>\r\n	<li>RAM + ROM : 3GB + 64GB</li>\r\n	<li>กล้อง : 13 MP AI Triple กล้อง + 5MP กล้องด้านหน้า</li>\r\n	<li>แบตเตอรี่ : 5000mAh(Typ)</li>\r\n	<li>OS : MIUI,Global Version,สนับสนุน OTA Update</li>\r\n	<li>WIFI, Bluetooth 5.0, GPS, OTG</li>\r\n</ul>\r\n', 3699, 99, 'e06b2e9be91f8f51546f54fc8d31f2f8.jpg', 10, '2021-08-16 14:45:35'),
+(8, 6, 'PD640800008', 'SMARTPHONE (สมาร์ทโฟน) XIAOMI REDMI NOTE 10 PRO 6.67', '<p>618 GPU/6GB+64GB | 6GB+128GB | 8GB+128GB LPDDR4X RAM + UFS 2.2/6.67&quot; AMOLED DotDisplay/108MP+8MP+5MP+2MP/16MP/5020mAh/2.4GHz/5GHz Wi-Fi บลูทูธ 5.1/MIUI 12 บน Android 11</p>\r\n', 8990, 99, '46188263c0c54ad7515c8f7b5cf91172.jpg', 7, '2021-08-16 14:46:36');
 
 -- --------------------------------------------------------
 
@@ -336,7 +361,7 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -354,13 +379,13 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pre_order`
 --
 ALTER TABLE `pre_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -384,7 +409,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

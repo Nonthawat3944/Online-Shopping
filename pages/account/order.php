@@ -1,8 +1,8 @@
 <?php
 if (!isset($_SESSION['U_ID'])) {
-    ?>
+?>
     <meta http-equiv="refresh" content="0; url=../auth/login.php">
-    <?php
+<?php
     exit();
 }
 ?>
@@ -15,9 +15,20 @@ if (isset($_GET['order_details'])) {
     <div class="card card-body shadow-sm">
         <h4 style="color: #0b2d38;">การซื้อของฉัน</h4>
         <hr class="my-2">
+        <?php
+        try {
+            $stmt = $connect->prepare("SELECT * FROM orders  WHERE user_id = :user_id ORDER BY code ASC");
+            $stmt->execute(array(':user_id' => $_SESSION['U_ID']));
+            $orders = $stmt->fetchAll();
+            $row_o = $stmt->rowCount();
+        } catch (PDOException $e) {
+            echo "เกิดข้อผิดพลาด : " . $e->getMessage();
+            exit();
+        }
+        ?>
         <div class="order-list">
             <div class="table-responsive">
-                <table class="table">
+                <table id="ordersTable" class="table">
                     <thead>
                         <tr>
                             <th>รหัสคำสั่งซื้อ</th>
@@ -30,7 +41,7 @@ if (isset($_GET['order_details'])) {
                     </thead>
                     <tbody>
                         <?php
-                        for ($i = 1; $i <= 3; $i++) {
+                        for ($i = 1; $i <= 1; $i++) {
                         ?>
                             <tr>
                                 <th>OR640800001</th>
@@ -39,54 +50,6 @@ if (isset($_GET['order_details'])) {
                                 <td>2021-08-11 08:11:17</td>
                                 <td>
                                     <span class="text-warning">รอการตรวจสอบ</span>
-                                </td>
-                                <td>
-                                    <a href="?account=order&order_details=1" class="btn btn-sm btn-info">ดูรายละเอียด</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>OR640800001</th>
-                                <td>2</td>
-                                <td>฿80,050.00</td>
-                                <td>2021-08-11 08:11:17</td>
-                                <td>
-                                    <span class="text-danger">ยกเลิกแล้ว</span>
-                                </td>
-                                <td>
-                                    <a href="?account=order&order_details=1" class="btn btn-sm btn-info">ดูรายละเอียด</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>OR640800001</th>
-                                <td>2</td>
-                                <td>฿80,050.00</td>
-                                <td>2021-08-11 08:11:17</td>
-                                <td>
-                                    <span class="text-success">จัดส่งสินค้าแล้ว</span>
-                                </td>
-                                <td>
-                                    <a href="?account=order&order_details=1" class="btn btn-sm btn-info">ดูรายละเอียด</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>OR640800001</th>
-                                <td>2</td>
-                                <td>฿80,050.00</td>
-                                <td>2021-08-11 08:11:17</td>
-                                <td>
-                                    <span class="text-success">ชำระเงินแล้ว</span>
-                                </td>
-                                <td>
-                                    <a href="?account=order&order_details=1" class="btn btn-sm btn-info">ดูรายละเอียด</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>OR640800001</th>
-                                <td>2</td>
-                                <td>฿80,050.00</td>
-                                <td>2021-08-11 08:11:17</td>
-                                <td>
-                                    <span class="text-info">กำลังจัดส่ง</span>
                                 </td>
                                 <td>
                                     <a href="?account=order&order_details=1" class="btn btn-sm btn-info">ดูรายละเอียด</a>
