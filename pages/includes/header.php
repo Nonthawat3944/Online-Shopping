@@ -33,21 +33,6 @@ if (isset($_GET['logout'])) {
     <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="../../assets/css/style_main.css">
-    <style>
-        <?php
-        if (isset($_GET['account']) && !isset($_GET['order_details']) && $_GET['account'] !== "order") {
-        ?>@media screen and (min-width: 401px) {
-            footer {
-                position: fixed !important;
-                bottom: 0;
-                width: 100%;
-            }
-        }
-
-        <?php
-        }
-        ?>
-    </style>
 
 </head>
 

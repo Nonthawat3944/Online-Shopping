@@ -30,7 +30,7 @@ if ($stmt->rowCount() < 1) {
                                 <li class="mb-2">
                                     <strong>
                                         <a href="?pd=<?= $value['product_id'] ?>" class="text-decoration-none text-dark">
-                                        <?= $value['product'] ?>
+                                            <?= $value['product'] ?>
                                         </a>
                                     </strong>
                                 </li>
@@ -38,7 +38,7 @@ if ($stmt->rowCount() < 1) {
                                 <li class="mb-2 row">
                                     <div class="col-12 col-md-6">
                                         <strong>
-                                            <h4 class="text-primary">฿<?= number_format($value['price'],2) ?></h4>
+                                            <h4 class="text-primary">฿<?= number_format($value['price'], 2) ?></h4>
                                         </strong>
                                     </div>
                                     <div class="col-12 col-md-6">
@@ -67,13 +67,16 @@ if ($stmt->rowCount() < 1) {
                         </div>
                         <div class="wishlist-item-details-app col-9">
                             <div class="w-100 text-truncate"><span class="text-dark"><?= $value['product'] ?></span></div>
-                            <b class="text-primary">฿<?= number_format($value['price'],2) ?></b>
+                            <b class="text-primary">฿<?= number_format($value['price'], 2) ?></b>
                         </div>
                     </div>
                 </a>
                 <div class="row">
                     <div class="col-12">
-                        <a href="?account=wishlist&wishlist=out&id=<?= $value['id'] ?>" class="btn btn-sm btn-outline-danger w-100" onclick="return confirm('ต้องการลบออกจากสินค้าที่ถูกใจ ?')">ลบ</a>
+
+                        <a href="?account=wishlist&wishlist=out&id=<?= $value['id'] ?>" class="btn btn-sm btn-outline-danger w-100" onclick="return confirm('ต้องการลบออกจากสินค้าที่ถูกใจ ?')">
+                            <i class="bi bi-trash"></i> นำออก
+                        </a>
                     </div>
                 </div>
             </div>

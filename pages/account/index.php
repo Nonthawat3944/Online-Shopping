@@ -23,19 +23,19 @@ if (!isset($_SESSION['U_ID'])) {
             <div class="card card-body shadow-sm">
                 <h4 style="color: #0b2d38;">ข้อมูลส่วนตัว</h4>
                 <hr class="my-2">
-                <form action="">
+                <form action="../../services/account/profile.php" method="POST">
                     <div class="input-group mb-3">
                         <label for="username" class="input-group-text">ชื่อผู้ใช้</label>
-                        <input type="text" name="username" class="form-control" placeholder="ชื่อผู้ใช้..." required>
+                        <input type="text" name="username" class="form-control" placeholder="ชื่อผู้ใช้..." value="<?= $_SESSION['U_USERNAME'] ?>" required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="fullname" class="input-group-text">ชื่อ - นามสกุล</label>
-                        <input type="text" name="firstname" class="form-control" placeholder="ชื่อ..." required>
-                        <input type="text" name="lastname" class="form-control" placeholder="นามสกุล..." required>
+                        <input type="text" name="firstname" class="form-control" placeholder="ชื่อ..." value="<?= $_SESSION['U_FIRSTNAME'] ?>" required>
+                        <input type="text" name="lastname" class="form-control" placeholder="นามสกุล..." value="<?= $_SESSION['U_LASTNAME'] ?>" required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="email" class="input-group-text">อีเมลล์</label>
-                        <input type="email" name="email" class="form-control" placeholder="อีเมลล์..." required>
+                        <input type="email" name="email" class="form-control" placeholder="อีเมลล์..." value="<?= $_SESSION['U_EMAIL'] ?>" required>
                     </div>
                     <input type="submit" value="บันทึก" class="btn btn-primary">
                 </form>

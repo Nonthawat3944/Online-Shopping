@@ -27,7 +27,8 @@ footer {
     opacity: 0.5;
 }
 
-.navbar-main, .navbar-app {
+.navbar-main,
+.navbar-app {
     background-color: #0b2d38;
 }
 
@@ -57,6 +58,7 @@ footer {
     position: absolute;
 }
 
+
 /* authentication display */
 
 .auth-main {
@@ -78,9 +80,12 @@ footer {
     color: #EF6C33;
 }
 
+
 /* cart display  */
 
-.cart-list::-webkit-scrollbar, .cart-list-form-order::-webkit-scrollbar, .wishlist-list::-webkit-scrollbar {
+.cart-list::-webkit-scrollbar,
+.cart-list-form-order::-webkit-scrollbar,
+.wishlist-list::-webkit-scrollbar {
     width: 0;
 }
 
@@ -91,6 +96,7 @@ footer {
 .cart-item-image img {
     width: 100px;
 }
+
 
 /* account display */
 
@@ -104,12 +110,14 @@ footer {
     color: #0b2d38;
 }
 
-.account-active, .account-active a {
+.account-active,
+.account-active a {
     box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
     background-color: #EF6C33;
     border-radius: 5px;
     color: #ffffff;
 }
+
 
 /* Remove Ccategoroy -list when display < 765px */
 
@@ -118,6 +126,7 @@ footer {
         display: none;
     }
 }
+
 
 /* Responsive for Mobile */
 
@@ -128,41 +137,34 @@ footer {
     footer {
         padding-bottom: 5vh;
     }
-    .navbar-main, .product-display, .cart-list, .cart-list-form-order, .wishlist-list, .order-list, .order-header, .user-menu {
+    .navbar-main,
+    .product-display,
+    .cart-list,
+    .cart-list-form-order,
+    .wishlist-list,
+    .order-list,
+    .order-header,
+    .user-menu {
         display: none;
     }
-
 }
+
 
 /* Responsive for Website */
 
 @media screen and (min-width: 401px) {
-    .navbar-app, .product-display-app, .navbar-bottom, .cart-list-app, .wishlist-list-app, .order-list-app, .order-header-app, .user-menu-app {
+    .navbar-app,
+    .product-display-app,
+    .navbar-bottom,
+    .cart-list-app,
+    .wishlist-list-app,
+    .order-list-app,
+    .order-header-app,
+    .user-menu-app {
         display: none;
     }
     .cart-list {
         height: 500px;
         overflow-y: auto;
-    }
-    .cart-list-order {
-        height: 890px;
-        overflow-y: auto;
-    }
-    .cart-list-form-order {
-        height: 705px;
-        overflow-y: auto;
-    }
-    .cart-item-details .cart-item-title ul li:first-child strong a:hover, .wishlist-item-details .wishlist-item-title ul li:first-child strong a:hover {
-        opacity: 0.5;
-    }
-    .wishlist-list {
-        height: 475px;
-        overflow-y: auto;
-    }
-    .wishlist-item-image {
-        margin-right: 1rem;
-    }
-    .wishlist-item-image img {
-        width: 100px;
     }
 }

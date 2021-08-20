@@ -17,7 +17,7 @@ if (isset($_GET['order_details'])) {
         <hr class="my-2">
         <?php
         try {
-            $stmt = $connect->prepare("SELECT * FROM orders  WHERE user_id = :user_id ORDER BY code ASC");
+            $stmt = $connect->prepare("SELECT * FROM orders  WHERE user_id = :user_id ORDER BY created_at DESC");
             $stmt->execute(array(':user_id' => $_SESSION['U_ID']));
             $orders = $stmt->fetchAll();
             $row_o = $stmt->rowCount();
@@ -41,19 +41,49 @@ if (isset($_GET['order_details'])) {
                     </thead>
                     <tbody>
                         <?php
-                        for ($i = 1; $i <= 1; $i++) {
+                        foreach ($orders as $order) {
                         ?>
                             <tr>
-                                <th>OR640800001</th>
-                                <td>2</td>
-                                <td>฿80,050.00</td>
-                                <td>2021-08-11 08:11:17</td>
-                                <td>
-                                    <span class="text-warning">รอการตรวจสอบ</span>
+                                <th style="white-space:nowrap;"><?= $order['code'] ?></th>
+                                <td style="white-space:nowrap;">
+                                    <?php
+                                    try {
+                                        $stmt_order = $connect->prepare("SELECT * FROM pre_order WHERE code = :code");
+                                        $stmt_order->execute(array(':code' => $order['code']));
+                                        $pre_order = $stmt_order->fetchAll();
+                                        $row_pre_order = $stmt_order->rowCount();
+                                    } catch (PDOException $e) {
+                                        echo "เกิดข้อผิดพลาด : " . $e->getMessage();
+                                        exit();
+                                    }
+
+                                    $total_price = 0;
+                                    foreach ($pre_order as $price) {
+                                        $total_price += $price['total_price'];
+                                    }
+                                    echo $row_pre_order;
+                                    ?>
                                 </td>
-                                <td>
-                                    <a href="?account=order&order_details=1" class="btn btn-sm btn-info">ดูรายละเอียด</a>
+                                <td style="white-space:nowrap;">฿<?= number_format($total_price  + $order['shippingCost'], 2) ?></td>
+                                <td style="white-space:nowrap;"><?= date("d/m/Y/เวลา H:i น.", strtotime($order['created_at'])) ?></td>
+                                <td style="white-space:nowrap;">
+                                    <?php
+                                    if ($order['status'] == 2) {
+                                        echo '<span class="text-danger">รอชำระเงิน</span>';
+                                    } else if ($order['status'] == 1) {
+                                        echo '<span class="text-warning">รอการตรวจสอบ</span>';
+                                    } else if ($order['status'] == 3) {
+                                        echo '<span class="text-success">ชำระเงินแล้ว</span>';
+                                    } else if ($order['status'] == 4) {
+                                        echo '<span class="text-info">กำลังจัดส่ง</span>';
+                                    } else if ($order['status'] == 5) {
+                                        echo '<span class="text-danger">ยกเลิกแล้ว</span>';
+                                    } else if ($order['status'] == 6) {
+                                        echo '<span class="text-success">จัดส่งสินค้าแล้ว</span>';
+                                    }
+                                    ?>
                                 </td>
+                                <td style="white-space:nowrap;" class="text-center"><a href="?account=order&order_details&code=<?= $order['code'] ?>" class="btn btn-info btn-sm">ดูรายละเอียด</a></td>
                             </tr>
                         <?php
                         }
@@ -65,16 +95,50 @@ if (isset($_GET['order_details'])) {
         </div>
         <div class="order-list-app">
             <?php
-            for ($i = 1; $i <= 12; $i++) {
+            foreach ($orders as $order) {
             ?>
                 <div class="card card-body shadow-sm mb-1">
                     <ul class="list-unstyled mb-0">
-                        <li class="d-flex justify-content-between align-items-center">รหัสคำสั่งซื้อ : OR640800001 <a href="?account=order&order_details=1" class="btn btn-sm btn-info">ดูรายละเอียด</a></li>
+                        <li class="d-flex justify-content-between align-items-center">รหัสคำสั่งซื้อ : <?= $order['code'] ?> <a href="?account=order&order_details&code=<?= $order['code'] ?>" class="btn btn-sm btn-info">ดูรายละเอียด</a></li>
                         <hr class="my-1">
-                        <li>รายการสินค้า : 2</li>
-                        <li>ราคาทั้งหมด : ฿80,050.00</li>
-                        <li>วันที่สั่งซื้อ : 2021-08-11 08:11:17</li>
-                        <li>สถานะ : <span class="text-warning">รอการตรวจสอบ</span></li>
+                        <li>รายการสินค้า :
+                            <?php
+                            try {
+                                $stmt_order = $connect->prepare("SELECT * FROM pre_order WHERE code = :code");
+                                $stmt_order->execute(array(':code' => $order['code']));
+                                $pre_order = $stmt_order->fetchAll();
+                                $row_pre_order = $stmt_order->rowCount();
+                            } catch (PDOException $e) {
+                                echo "เกิดข้อผิดพลาด : " . $e->getMessage();
+                                exit();
+                            }
+
+                            $total_price = 0;
+                            foreach ($pre_order as $price) {
+                                $total_price += $price['total_price'];
+                            }
+                            echo $row_pre_order;
+                            ?>
+                        </li>
+                        <li>ราคาทั้งหมด : ฿<?= number_format($total_price  + $order['shippingCost'], 2) ?></li>
+                        <li>วันที่สั่งซื้อ : <?= date("d/m/Y/เวลา H:i น.", strtotime($order['created_at'])) ?></li>
+                        <li>สถานะ :
+                            <?php
+                            if ($order['status'] == 2) {
+                                echo '<span class="text-danger">รอชำระเงิน</span>';
+                            } else if ($order['status'] == 1) {
+                                echo '<span class="text-warning">รอการตรวจสอบ</span>';
+                            } else if ($order['status'] == 3) {
+                                echo '<span class="text-success">ชำระเงินแล้ว</span>';
+                            } else if ($order['status'] == 4) {
+                                echo '<span class="text-info">กำลังจัดส่ง</span>';
+                            } else if ($order['status'] == 5) {
+                                echo '<span class="text-danger">ยกเลิกแล้ว</span>';
+                            } else if ($order['status'] == 6) {
+                                echo '<span class="text-success">จัดส่งสินค้าแล้ว</span>';
+                            }
+                            ?>
+                        </li>
                     </ul>
                 </div>
             <?php
