@@ -8,7 +8,6 @@ try {
     echo "เกิดข้อผิดพลาด : " . $e->getMessage();
     exit();
 }
-
 if (isset($_GET['logout'])) {
     session_destroy();
 ?>

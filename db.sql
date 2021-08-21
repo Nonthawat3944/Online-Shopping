@@ -52,7 +52,7 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `banner`) VALUES
-(1, 'bcdc94c77c225d37e8a12c50ffd0dac8.png'),
+(1, '185b57a7315df4d3a2a0b14b1d419f54.png'),
 (2, '94ce76cbb94999125bd2adaa1c086f35.png'),
 (3, 'f11c3881f9854a3b69d7399bdeebacb1.png');
 
