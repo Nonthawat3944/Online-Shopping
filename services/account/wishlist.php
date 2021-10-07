@@ -20,11 +20,11 @@ if ($stmt->rowCount() < 1) {
         foreach ($data as $value) {
         ?>
             <div class="wishlist-item card card-body shadow-sm mb-1">
-                <div class="d-flex">
-                    <div class="wishlist-item-image">
-                        <img src="../../admin/uploads/<?= $value['image'] ?>" class="d-block mx-auto rounded">
+                <div class="row">
+                    <div class="col-4 wishlist-item-image">
+                        <img src="../../admin/uploads/<?= $value['image'] ?>" class="d-block mx-auto rounded w-50">
                     </div>
-                    <div class="wishlist-item-details">
+                    <div class="col-6 wishlist-item-details">
                         <div class="wishlist-item-title">
                             <ul class="list-unstyled mb-0">
                                 <li class="mb-2">
