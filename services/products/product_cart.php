@@ -58,7 +58,7 @@ if (isset($_SESSION['U_ID'])) {
     }
 } else {
     ?>
-    <meta http-equiv="refresh" content="0; url=../auth/login.php">
+    <meta http-equiv="refresh" content="0; url=../../pages/auth/login.php">
 <?php
 }
 ?>
