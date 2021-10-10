@@ -7,7 +7,7 @@
     <div class="auth-box card shadow text-center">
         <div class="card-body">
             <div class="auth-title">
-                <h3><b>CSEMN | Shopping Online</b></h3>
+                <h3><b><?= $shop_db[1]['title'] ?></b></h3>
                 <strong>เข้าสู่ระบบ</strong>
             </div>
             <hr>
