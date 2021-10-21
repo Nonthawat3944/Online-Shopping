@@ -181,7 +181,7 @@ INSERT INTO `shop` (`id`, `title`) VALUES
 (2, 'Shop Name'),
 (3, 'Title Website'),
 (4, 'Website Description'),
-(5, 'JXqFg1nOAobVMvwOGUOkjR2Ccf4sSWZOihZhHsQKf3Z');
+(5, 'LINE TOKEN');
 
 -- --------------------------------------------------------
 
